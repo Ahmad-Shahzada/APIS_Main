@@ -1,13 +1,13 @@
 import React from "react";
 import { useGetRandomUsersQuery } from "../features/api/randomUserApi";
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card"; // Importing ShadCN Card
+import { Card, CardContent } from "@/components/ui/card"; 
 
 const RandomUser = () => {
   const { data, error, isLoading } = useGetRandomUsersQuery();
   const navigate = useNavigate();
 
-  console.log("API Response:", data); // Debugging
+  console.log("API Response:", data); 
 
   if (isLoading)
     return <p className="text-center text-lg font-semibold text-white">Loading...</p>;
@@ -18,7 +18,7 @@ const RandomUser = () => {
       </p>
     );
 
-  // Extract only user data
+  
   const users = Array.isArray(data?.data?.data) ? data.data.data : [];
 
   return (
